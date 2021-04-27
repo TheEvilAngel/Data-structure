@@ -1,0 +1,2 @@
+﻿  test.c
+D:\BUAA\数据结构与程序设计\第二次作业\test.c(7,16): error C2079: “std1”使用未定义的 struct“student”

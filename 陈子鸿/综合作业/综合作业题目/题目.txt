@@ -1,0 +1,68 @@
+【问题描述】
+
+在自然语言文本处理中，有一种分析文本、自动抽取文本主题思想的方法（通常用于文本摘要生成），其方法如下：
+
+1.        首先分析文本中非停用词（stop-word）的出现频度；
+
+2.        统计文本中每个句子中非停用词频度之和。若某个非停用词在一个句子中出现多次，则都要计算；
+
+3.        按非停用词频度之和由高至低输出前N个句子。
+
+注：
+
+l  单词为仅由字母组成的字符序列。包含大写字母的单词应将大写字母转换为小写字母后进行词频统计。
+
+l  句子是由下面符号分隔的段落：句号(.)、问号(?)和惊叹号(!)。
+
+l  在自然语言处理中，停用词（stop-word）指的是文本分析时不会提供额外语义信息的词的列表，如英文单词a，an，he，you等就是停用词。
+
+【输入形式】
+
+根据当前目录下停用词文件“stopwords.txt”，打开当前目录下文件“article.txt”，并从标准输入读入需要生成至文件的句子数N。按上面要求进行文本分析，抽取相关文本主题思想。
+
+【输出形式】
+
+在标准输出上按频度之和由高至低输出前5个句子的频度之和与句子。输出时先输出句子的频度和，然后空一个空格再输出整个句子，每个句子最后有一个回车。同时按频度之和由高至低输出前N个句子的频度之和与句子输出到文件“results.txt”中，输出要求同标准输出。输出时，若两个句子频度和相同，则按原文本中出现次序输出。
+
+说明：输出句子时，从第一个非空字符开始，句子中每个组成部分形态（包括单词中字母大小写、间隔）应与原文本中一致
+
+
+【样例输入】
+
+200
+
+（其它可从课程下载区下载样例文件“article.txt”和停用词表文件“stopwords.txt”到本地作为程序输入文件。）
+
+
+【样例输出】
+
+程序运行后，屏幕上输出结果为：
+
+50286 James's eyes were hazel, his nose was slightly longer than Harry's and there was no scar on his forehead, but they had the same thin face, same mouth, same eyebrows; James's hair stuck up at the back exactly as Harry's did, his hands could have been Harry's and Harry could tell that, when James stood up, they would be within an inch of each other in height.
+
+48188 I didn't practise, I didn't bother, I could've stopped myself having those dreams, Hermione kept telling me to do it, if I had he'd never have been able to show me where to go, and-Sirius wouldn't-Sirius wouldn't-'Something was erupting inside Harry's head: a need to justify himself, to explain-I tried to check he'd really taken Sirius, I went to Umbridge's office, I spoke to Kreacher in the fire and he said Sirius wasn't there, he said he'd gone!
+
+39986 Little Ginny's been writing in it for months and months, telling me all her pitiful worries and woes - how her brothers tease her, how she had to come to school with secondhand robes and books, how - Riddle's eyes glinted - how she didn't think famous, good, great Harry Potter would ever like herAll the time he spoke, Riddle's eyes never left Harry's face.
+
+39455 I mean, it was really great of you and everything,' said Hermione quickly, looking positively petrified at the look on Harry's face, everyone thought it was a wonderful thing to do-'That's funny,' said Harry through gritted teeth, because I definitely remember Ron saying I'd wasted time acting the hero .
+
+39438 Harry, Ginny and Neville and each of the Death Eaters turned in spite of themselves to watch the top of the tank as a brain burst from the green liquid like a leaping fish: for a moment it seemed suspended in midair, then it soared towards Ron, spinning as it came, and what looked like ribbons of moving images flew from it, unravelling like rolls of film-Ha ha ha, Harry, look at it-' said Ron, watching it disgorge its gaudy innards, Harry, come and touch it; bet it's weird-'RON, NO!
+
+
+
+所生成的结果文件“results.txt”内容应与下载区样例文件“results(example).txt”完全相同。
+
+
+【样例说明】
+
+程序运行时，对给定的文本文件article.txt按要求进行文本分析，抽取相关文本主题思想。
+
+在本样例中，按输出格式要求，在屏幕上输出了频率之和由高至低的前5个句子（即results.txt文件中的前5个句子）；results.txt则包含了200个按频度之和由高到低排列的所有句子的频度之和与句子文本。
+
+频率最高的句子中包含的非停用词及其出现频度如下：(james:78)(s:4750)(eyes:480)(hazel:1)(nose:115)(slightly:164)(longer:59)(harry:5732)(s:4750)(scar:90)(forehead:42)(face:521)(mouth:182)(eyebrows:45)(james:78)(s:4750)(hair:166)(stuck:35)(exactly:101)(harry:5732)(s:4750)(did:667)(hands:175)(harry:5732)(s:4750)(harry:5732)(tell:332)(james:78)(stood:156)(inch:28)(height:15)，这些非停用词的出现频度之和为50286。
+
+频率次高的句子中包含的非停用词及其出现频度如下：(didn:400)(t:2308)(practise:20)(didn:400)(t:2308)(bother:16)(ve:693)(stopped:120)(having:103)(dreams:33)(hermione:1615)(kept:113)(telling:93)(d:621)(able:126)(sirius:647)(wouldn:113)(t:2308)(sirius:647)(wouldn:113)(t:2308)(erupting:2)(inside:198)(harry:5732)(s:4750)(head:490)(need:183)(justify:2)(explain:38)(tried:128)(check:35)(d:621)(really:288)(taken:79)(sirius:647)(went:198)(umbridge:571)(s:4750)(office:170)(spoke:65)(kreacher:118)(said:5086)(sirius:647)(wasn:141)(t:2308)(said:5086)(d:621)(gone:129)，这些非停用词的出现频度之和为48188。
+
+【评分标准】
+
+本题是一个综合性能测试题，其评分标准为在所有程序中运行最快的将得满分，其它程序的得分以最快的程序运行时间为基准，根据其运行时间计算得出。程序运行无结果或结果错误将不得分。
